@@ -1,0 +1,18 @@
+# ninja log v6
+1	36	1728323537934318458	CMakeFiles/finalProject_draft.dir/lesson.cpp.o	79927d86bceb4fa0
+2	36	1728323537935024124	CMakeFiles/finalProject_draft.dir/person.cpp.o	87119008c5fbd550
+1	467	1728323537934663958	CMakeFiles/finalProject_draft.dir/main.cpp.o	c1ce9be3ba946e8d
+1	480	1728323537933834083	CMakeFiles/finalProject_draft.dir/date.cpp.o	b0fbb8cda8fc7d36
+481	536	1728323538413909041	finalProject_draft	e04a75bcfa703ff5
+6	465	1728323652397548624	CMakeFiles/finalProject_draft.dir/main.cpp.o	c1ce9be3ba946e8d
+465	541	1728323652856412291	finalProject_draft	e04a75bcfa703ff5
+9	772	1728328891251113416	CMakeFiles/finalProject_draft.dir/main.cpp.o	c1ce9be3ba946e8d
+772	833	1728328892014782333	finalProject_draft	e04a75bcfa703ff5
+5	560	1728329100548259249	CMakeFiles/finalProject_draft.dir/main.cpp.o	c1ce9be3ba946e8d
+560	614	1728329101103762124	finalProject_draft	e04a75bcfa703ff5
+5	533	1728329362857199166	CMakeFiles/finalProject_draft.dir/main.cpp.o	c1ce9be3ba946e8d
+534	584	1728329363386072249	finalProject_draft	e04a75bcfa703ff5
+5	528	1728329732535270791	CMakeFiles/finalProject_draft.dir/main.cpp.o	c1ce9be3ba946e8d
+529	579	1728329733059091291	finalProject_draft	e04a75bcfa703ff5
+5	512	1728329751266980499	CMakeFiles/finalProject_draft.dir/main.cpp.o	c1ce9be3ba946e8d
+512	563	1728329751774721208	finalProject_draft	e04a75bcfa703ff5

@@ -1,0 +1,29 @@
+@startuml
+'https://plantuml.com/class-diagram
+skinparam classAttributeIconSize 0
+
+class Lesson {
+    +Lesson(weekdayType lessonWeekday, int lessonDuration, float hourlyLessonFee)
+    +calculateUnitPrice() : float
+    +calculateLessonQty: int
+    +calculateTotalLessonPrice() : float
+    +operator+(const Lesson& other) : float
+    -lessonWeekday : weekdayType
+    -lessonDuration : int
+    -hourlyLessonFee : float
+    -unitPrice : float
+    -lessonQty : int
+    -totalLessonPrice : float
+}
+
+enum weekdayType {
+SUNDAY,
+MONDAY,
+TUESDAY,
+WEDNESDAY,
+THURSDAY,
+FRIDAY,
+SATURDAY,
+}
+
+@enduml

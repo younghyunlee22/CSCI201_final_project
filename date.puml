@@ -1,0 +1,53 @@
+@startuml date
+skinparam classAttributeIconSize 0
+
+
+/' Objects '/
+
+class Date {
+	+Date(int month, int day, int year)
+	~Date()
+	+isLeapYear() : bool
+    +daysInMonth(int month, int year);
+	+operator!=(const Date& otherDate) const : bool
+	+operator<(const Date& otherDate) const : bool
+	+operator<=(const Date& otherDate) const : bool
+	+operator==(const Date& otherDate) const : bool
+	+operator>(const Date& otherDate) const : bool
+	+operator>=(const Date& otherDate) const : bool
+	+operator++() : Date
+	+operator++(int) : Date
+	+operator--() : Date
+	+operator--(int) : Date
+	+operator+(int daysToAdd) : Date&
+	+operator-(int daysToSub) : Date&
+	+getDay() const : int
+	+getMonth() const : int
+	+getYear() const : int
+	+setDay(int day) : void
+	+setMonth(int month) : void
+	+setYear(int year) : void
+    +friend operator+(int daysToAdd, Date& addToDate) : Date&
+	+friend operator-(int daysToSub, Date& subFromDate) : Date&
+	+friend operator>>(std::istream& in, Date& dateToFill) : std::istream&
+	+friend operator<<(std::ostream& out, Date& dateToPrint) : std::ostream&
+    -day : int
+    -month : int
+    -year : int
+    -isValidDate(int month, int day, int year) : bool
+    -isLeapYearHelper(int year) : bool
+    -incrementDate() : void
+    -decrementDate() : void
+}
+
+/' Inheritance relationships '/
+
+
+
+
+/' Aggregation relationships '/
+
+/' Nested objects '/
+
+
+@enduml

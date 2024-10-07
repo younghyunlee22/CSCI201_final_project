@@ -1,0 +1,3 @@
+/Users/joy/Documents/finalProject_draft/cmake-build-debug/CMakeFiles/finalProject_draft.dir
+/Users/joy/Documents/finalProject_draft/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/joy/Documents/finalProject_draft/cmake-build-debug/CMakeFiles/rebuild_cache.dir

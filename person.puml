@@ -1,0 +1,45 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Person {
+    +Person(string firstName, string lastName)
+    ~Person()
+    +getFullName() : string
+    -firstName : string
+    -lastName : string
+}
+
+class Student {
+    +Student(string firstName, string lastName)
+    ~Student()
+    +addLesson() : void
+    +calculateBilledTotal(Lesson** lessons) : float
+    +getLessonList() : std::string
+    +operator+(const Student& other) : float
+    -lessons : Lesson**
+    -numLessons: int
+    -billedTotal : float
+}
+
+class Recipient {
+    +Recipient(string firstName, string lastName)
+    ~Recipient()
+    +addStudent() : void
+    +getStudentList() : std::string
+    +calculateInvoiceTotal(Student** students) : float
+    -students : Student**
+    -numStudents: int
+    -invoiceTotal : float
+}
+
+/' Inheritance relationships '/
+
+Person <|-- Student
+Person <|-- Recipient
+
+/' Aggregation relationships '/
+
+Student *-- Lesson
+Recipient *-- Student
+
+@enduml
