@@ -7,6 +7,22 @@
 #define DATE_H
 
 #include <iostream>
+#include <unordered_map>
+#include <string>
+
+using namespace std;
+
+enum weekdayType {
+    SUNDAY,
+    MONDAY,
+    TUESDAY,
+    WEDNESDAY,
+    THURSDAY,
+    FRIDAY,
+    SATURDAY
+};
+
+string weekdayToString(weekdayType day);
 
 class date {
 public:

@@ -9,6 +9,19 @@
 
 using namespace std;
 
+string weekdayToString(weekdayType day) {
+    switch(day) {
+        case SUNDAY:    return "Sunday";
+        case MONDAY:    return "Monday";
+        case TUESDAY:   return "Tuesday";
+        case WEDNESDAY: return "Wednesday";
+        case THURSDAY:  return "Thursday";
+        case FRIDAY:    return "Friday";
+        case SATURDAY:  return "Saturday";
+        default:        return "UNKNOWN";
+    }
+}
+
 // Helper method
 bool date::isLeapYearHelper(int year) {
     if (year % 4 ==0) {

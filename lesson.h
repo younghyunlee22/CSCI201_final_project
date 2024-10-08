@@ -5,7 +5,9 @@
 #ifndef LESSON_H
 #define LESSON_H
 
-
+#include <iostream>
+#include <date.h>
+#include <vector>
 
 class lesson {
 
