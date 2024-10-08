@@ -19,21 +19,21 @@ unordered_map<int, weekdayType> firstWeekdayOfMonth {
 
 int main() {
 
-    int month;
-    cout << "What month of 2024 is this invoice for? Type in number: " << endl;
-    cin >> month;
-
-    date monthObj(month, 1, 2024);
-    weekdayType fstWeekdayOfMth = firstWeekdayOfMonth[month];
-    cout << monthObj << " is " << weekdayToString(fstWeekdayOfMth) << endl;
-
-    int lessonDayChoice;
-    cout << "What weekday does this student take class? Type in number: " << endl;
-    cout << "Sunday: 1, Monday: 2, Tuesday: 3, Wednesday: 4, Thursday: 5, Friday: 6, Saturday: 7" << endl;
-    cin >> lessonDayChoice;
-
-    weekdayType lessonDay = static_cast<weekdayType>(lessonDayChoice-1);
-    cout << "The student takes class on " << weekdayToString(lessonDay) << endl;
+    // int month;
+    // cout << "What month of 2024 is this invoice for? Type in number: " << endl;
+    // cin >> month;
+    //
+    // date monthObj(month, 1, 2024);
+    // weekdayType fstWeekdayOfMth = firstWeekdayOfMonth[month];
+    // cout << monthObj << " is " << weekdayToString(fstWeekdayOfMth) << endl;
+    //
+    // int lessonDayChoice;
+    // cout << "What weekday does this student take class? Type in number: " << endl;
+    // cout << "Sunday: 1, Monday: 2, Tuesday: 3, Wednesday: 4, Thursday: 5, Friday: 6, Saturday: 7" << endl;
+    // cin >> lessonDayChoice;
+    //
+    // weekdayType lessonDay = static_cast<weekdayType>(lessonDayChoice-1);
+    // cout << "The student takes class on " << weekdayToString(lessonDay) << endl;
 
     // vector<date> lessonDates;
     // for (int i = 1; i <monthObj.daysInMonth(month, 2024); i += 7) {
@@ -44,6 +44,27 @@ int main() {
     // for (date& x : lessonDates) {
     //     cout << ' ' << x;
     // }
+
+
+    string fname, lname;
+
+    // Input first name and last name
+    cout << "Enter first name: ";
+    cin >> fname;
+    cout << "Enter last name: ";
+    cin >> lname;
+
+    // Create a Person object
+    Person person(fname, lname);
+
+    // Output full name
+    cout << "Full Name: " << person << endl;
+
+    // Use getters and setters
+    person.setFirstName("John");
+    person.setLastName("Doe");
+
+    cout << "Updated Full Name: " << person << endl;
 
     return 0;
 }
