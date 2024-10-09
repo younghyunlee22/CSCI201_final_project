@@ -271,7 +271,7 @@ istream& operator>>(istream& in, date& dateToFill) {
     return in;
 }
 
-ostream& operator<<(ostream& out, date& dateToPrint) {
+ostream& operator<<(ostream& out, const date& dateToPrint) {
     // output the date is ISO-8601 format yyyy-mm-dd
     out << setfill('0') << setw(4) << dateToPrint.year << '-'
         << setw(2) << dateToPrint.month << '-'

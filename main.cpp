@@ -1,71 +1,58 @@
-//
-// Created by Younghyun Lee on 10/7/24.
-//
-
 #include <iostream>
 #include "person.h"
 #include "lesson.h"
-// #include "date.h"
 #include <unordered_map>
 #include <vector>
 
 using namespace std;
 
 unordered_map<int, weekdayType> firstWeekdayOfMonth {
-                {10, TUESDAY},
-                {11, FRIDAY},
-                {12, SUNDAY}
+        {10, TUESDAY},
+        {11, FRIDAY},
+        {12, SUNDAY}
 };
 
 int main() {
-
-    // int month;
-    // cout << "What month of 2024 is this invoice for? Type in number: " << endl;
-    // cin >> month;
-    //
-    // date monthObj(month, 1, 2024);
-    // weekdayType fstWeekdayOfMth = firstWeekdayOfMonth[month];
-    // cout << monthObj << " is " << weekdayToString(fstWeekdayOfMth) << endl;
-    //
-    // int lessonDayChoice;
-    // cout << "What weekday does this student take class? Type in number: " << endl;
-    // cout << "Sunday: 1, Monday: 2, Tuesday: 3, Wednesday: 4, Thursday: 5, Friday: 6, Saturday: 7" << endl;
-    // cin >> lessonDayChoice;
-    //
-    // weekdayType lessonDay = static_cast<weekdayType>(lessonDayChoice-1);
-    // cout << "The student takes class on " << weekdayToString(lessonDay) << endl;
-
-    // vector<date> lessonDates;
-    // for (int i = 1; i <monthObj.daysInMonth(month, 2024); i += 7) {
-    //     lessonDates.push_back(date(month, i, 2024));
-    // }
-    //
-    // cout << "lessonDates contains:";
-    // for (date& x : lessonDates) {
-    //     cout << ' ' << x;
-    // }
-
-
     string fname, lname;
+    int age;
 
-    // Input first name and last name
-    cout << "Enter first name: ";
+    // Create a Recipient object (since Person is abstract)
+    cout << "Enter recipient's first name: ";
     cin >> fname;
-    cout << "Enter last name: ";
+    cout << "Enter recipient's last name: ";
     cin >> lname;
 
-    // Create a Person object
-    Person person(fname, lname);
+    Recipient recipient(fname, lname);
 
-    // Output full name
-    cout << "Full Name: " << person << endl;
+    // Add a student
+    cout << "Enter student's first name: ";
+    cin >> fname;
+    cout << "Enter student's last name: ";
+    cin >> lname;
+    cout << "Enter student's age: ";
+    cin >> age;
+    Student student1(fname, lname, 15);  // Example age
+    Student student2(fname, lname, 15);
 
-    // Use getters and setters
-    person.setFirstName("John");
-    person.setLastName("Doe");
+    // Add lessons to the student
+    Lesson lesson1(MONDAY, 60, 30.0f, 4);  // Monday, 60 min, $30/hour, 4 lessons
+    student1.addLesson(lesson1);
 
-    cout << "Updated Full Name: " << person << endl;
+    Lesson lesson2(WEDNESDAY, 45, 35.0f, 5);  // Wednesday, 45 min, $35/hour, 5 lessons
+    student1.addLesson(lesson2);
+
+    Lesson lesson3(MONDAY, 60, 35.0f, 4);  // Monday, 60 min, $30/hour, 4 lessons
+    student2.addLesson(lesson3);
+
+    Lesson lesson4(WEDNESDAY, 30, 35.0f, 5);  // Wednesday, 45 min, $35/hour, 5 lessons
+    student2.addLesson(lesson4);
+    // Add the student to the recipient
+    recipient.addStudent(student1);
+    recipient.addStudent(student2);
+    cout << "Number of students in recipient: " << recipient.getStudents().size() << endl;
+
+    // Print details
+    recipient.print();
 
     return 0;
 }
-

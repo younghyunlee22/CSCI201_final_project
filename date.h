@@ -64,7 +64,7 @@ public:
     friend date& operator+(int daysToAdd, date& addToDate);
     friend date& operator-(int daysToSub, date& subFromDate);
     friend std::istream& operator>>(std::istream& in, date& dateToFill);
-    friend std::ostream& operator<<(std::ostream& out, date& dateToPrint);
+    friend std::ostream& operator<<(std::ostream& out, const date& dateToPrint);
 
     int daysInMonth(int month, int year);
 
