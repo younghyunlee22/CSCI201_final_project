@@ -1,12 +1,19 @@
-//
-// Created by Younghyun Lee on 10/7/24.
-//
+/* Program name: lesson.cpp
+* Author: Younghyun Lee
+* Date last updated: 10/9/2024
+* Purpose: Create Lesson class
+*/
 
 #include "lesson.h"
+#include <iostream>
+#include <iomanip>
 
 // Lesson constructor
-Lesson::Lesson(weekdayType lsWeekday, int lsDuration, float hourlylsFee, int lsQty)
-    : lessonWeekday(lsWeekday), lessonDuration(lsDuration), hourlyLessonFee(hourlylsFee), lessonQty(lsQty) {
+Lesson::Lesson(weekdayType lsWeekday, int lsDuration, float hourlylsFee, int lsQty, vector<date> tempDateList)
+    : lessonWeekday(lsWeekday), lessonDuration(lsDuration), hourlyLessonFee(hourlylsFee), lessonQty(lsQty), lessonDateList(tempDateList) {
+        if (lsDuration < 30 || hourlylsFee < 30 || lsQty <= 0) {
+            throw invalid_argument("Invalid lesson details provided.");
+        }
     calculateUnitPrice();           // Calculate and set unitPrice
     calculateTotalLessonPrice();    // Calculate and set totalLessonPrice
 }
@@ -23,28 +30,27 @@ float Lesson::calculateTotalLessonPrice() {
     return totalLessonPrice;
 }
 
+// Getters
 float Lesson::getTotalLessonPrice() const {
     return totalLessonPrice;
 }
 
-// Print lesson details
-void Lesson::print() const {
-    cout << "Lesson: " << getWeekdayString(lessonWeekday) << ", Duration: " << lessonDuration << " minutes, "
-         << "Unit Price: $" << fixed << setprecision(2) << unitPrice << ", "
-         << "Number of Lessons: " << lessonQty << " "
-         << "Total Lesson Price: $" << totalLessonPrice << "\n";
+vector<date> Lesson::getLessonDateList() const {
+    return lessonDateList;
 }
 
-// Helper function to convert weekdayType to string
-string Lesson::getWeekdayString(weekdayType day) const {
-    switch (day) {
-        case SUNDAY: return "Sunday";
-        case MONDAY: return "Monday";
-        case TUESDAY: return "Tuesday";
-        case WEDNESDAY: return "Wednesday";
-        case THURSDAY: return "Thursday";
-        case FRIDAY: return "Friday";
-        case SATURDAY: return "Saturday";
-        default: return "Unknown";
+// Print lesson details
+void Lesson::print() const {
+    cout << weekdayToString(lessonWeekday) << ", Duration: " << lessonDuration << " minutes, "
+         << "Unit Price: $" << fixed << setprecision(2) << unitPrice << ", "
+         << "Number of Lessons: " << lessonQty << ", "
+         << "Lesson dates: ";
+         printDateList();
+         cout << "*Total Lesson Price: $" << totalLessonPrice << "\n";
+}
+
+void Lesson::printDateList() const {
+    for (const auto& lessonDate : lessonDateList) {
+        cout << lessonDate << " ";
     }
 }

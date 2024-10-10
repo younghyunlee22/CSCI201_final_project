@@ -1,7 +1,8 @@
-//
-// Created by Younghyun Lee on 10/7/24.
-//
-
+/* Program name: person.cpp
+* Author: Younghyun Lee
+* Date last updated: 10/9/2024
+* Purpose: Create Person class
+*/
 #include "person.h"
 
 #include <iostream>
@@ -10,11 +11,11 @@
 
 using namespace std;
 
-// Constructor implementation
+// Constructor
 Person::Person(string fname, string lname) : firstName(fname), lastName(lname) {
 }
 
-// Destructor implementation
+// Destructor
 Person::~Person() {
 }
 
@@ -36,17 +37,17 @@ void Person::setLastName(const string &lname) {
     lastName = lname;
 }
 
-// // Overloading >> operator for input
-// istream& operator>>(istream& in, Person& person) {
-//     in >> person.firstName >> person.lastName;
-//     return in;
-// }
-//
-// // Overloading << operator for output
-// ostream& operator<<(ostream& out, const Person& person) {
-//     out << person.firstName << " " << person.lastName;
-//     return out;
-// }
+// Overloading >> operator for input
+istream& operator>>(istream& in, Person& person) {
+    in >> person.firstName >> person.lastName;
+    return in;
+}
+
+// Overloading << operator for output
+ostream& operator<<(ostream& out, const Person& person) {
+    out << person.firstName << " " << person.lastName << " ";
+    return out;
+}
 
 // Recipient constructor
 Recipient::Recipient() : Person("", "") {}
@@ -67,15 +68,14 @@ vector<Student> Recipient::getStudents() const {
 
 // Print recipient details
 void Recipient::print() const {
-    cout << "Recipient: " << getFirstName() << " " << getLastName() << "\n";
-    cout << "Students:\n";
+    cout << "\n** Invoice for: " << getFirstName() << " " << getLastName() << " **\n";
+    cout << students.size() << " Students:\n";
 
     for (size_t i = 0; i < students.size(); ++i) {
-        cout << i + 1 << ". ";
+        cout << "Student " << i + 1 << ". ";
         students[i].print();
     }
-
-    cout << "Total Invoice for " << getFirstName() << ": $" << fixed << setprecision(2) << calculateTotal() << "\n";
+    cout << "* * * Invoice total: $" << fixed << setprecision(2) << calculateTotal() << "\n";
 }
 
 // Calculate the total cost for all students
@@ -88,24 +88,14 @@ float Recipient::calculateTotal() const {
 }
 
 // Student constructor
-Student::Student() : Person("", ""), age(0), studentTotalTuition(0.0f) {}
+Student::Student() : Person("", ""), studentTotalTuition(0.0f) {}
 
-Student::Student(string fname, string lname, int age) : Person(fname, lname), age(age), studentTotalTuition(0.0f) {}
+Student::Student(string fname, string lname) : Person(fname, lname), studentTotalTuition(0.0f) {}
 
 Student::~Student() {}
 
-// Get age
-int Student::getAge() const {
-    return age;
-}
-
 float Student::getStudentTotalTuition() const {
     return studentTotalTuition;
-}
-
-// Set age
-void Student::setAge(int age) {
-    this->age = age;
 }
 
 void Student::setStudentTotalTuition(float total) {
@@ -124,7 +114,7 @@ void Student::addLesson(Lesson& lesson){
 
 // Print student details
 void Student::print() const {
-    cout << getFirstName() << " " << getLastName() << ", Age: " << getAge() << "\n";
+    cout << getFirstName() << " " << getLastName() << "\n";
     cout << "Lessons:\n";
 
     for (size_t i = 0; i < lessons.size(); ++i) {
@@ -132,5 +122,5 @@ void Student::print() const {
         lessons[i].print();
     }
 
-    cout << "Total Lesson Price: $" << fixed << setprecision(2) << studentTotalTuition << "\n";
+    cout << "*Subtotal: $" << fixed << setprecision(2) << studentTotalTuition << "\n" << endl;
 }

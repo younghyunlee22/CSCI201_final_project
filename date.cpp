@@ -1,6 +1,6 @@
 /* Program name: date.cpp
 * Author: Younghyun Lee
-* Date last updated: 9/22/2024
+* Date last updated: 10/9/2024
 * Purpose: Create Date class
 */
 #include <iostream>
@@ -8,19 +8,6 @@
 #include "date.h"
 
 using namespace std;
-
-string weekdayToString(weekdayType day) {
-    switch(day) {
-        case SUNDAY:    return "Sunday";
-        case MONDAY:    return "Monday";
-        case TUESDAY:   return "Tuesday";
-        case WEDNESDAY: return "Wednesday";
-        case THURSDAY:  return "Thursday";
-        case FRIDAY:    return "Friday";
-        case SATURDAY:  return "Saturday";
-        default:        return "UNKNOWN";
-    }
-}
 
 // Helper method
 bool date::isLeapYearHelper(int year) {
@@ -70,19 +57,13 @@ bool date::isValidDate(int month, int day, int year) {
 }
 
 // Constructor
-date::date(int month, int day, int year)
-{
+date::date(int month, int day, int year) {
     if (!isValidDate(month, day, year)) {
-        cout << "Invalid date. Setting date to January 1, 2000." << endl;
-        this -> month = 1;
-        this -> day = 1;
-        this -> year = 2000;
+        throw invalid_argument("Invalid date provided");
     }
-    else {
-        this -> month = month;
-        this -> day = day;
-        this -> year = year;
-    }
+    this -> month = month;
+    this -> day = day;
+    this -> year = year;
 }
 
 // Getters

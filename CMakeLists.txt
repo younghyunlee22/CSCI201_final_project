@@ -12,4 +12,5 @@ add_executable(finalProject_draft
     lesson.h
     main.cpp
     person.cpp
-    person.h)
+    person.h
+        common.cpp)

@@ -1,28 +1,14 @@
-/* Program name: date.cpp
+/* Program name: date.h
 * Author: Younghyun Lee
-* Date last updated: 9/22/2024
+* Date last updated: 10/9/2024
 * Purpose: Create Date class
 */
 #ifndef DATE_H
 #define DATE_H
 
 #include <iostream>
-#include <unordered_map>
-#include <string>
 
 using namespace std;
-
-enum weekdayType {
-    SUNDAY,
-    MONDAY,
-    TUESDAY,
-    WEDNESDAY,
-    THURSDAY,
-    FRIDAY,
-    SATURDAY
-};
-
-string weekdayToString(weekdayType day);
 
 class date {
 public:

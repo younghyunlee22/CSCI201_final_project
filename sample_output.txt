@@ -1,0 +1,54 @@
+What month of 2024 is this invoice for? (1-12):
+2024-10-01 is Tuesday. 
+Who is this invoice for?
+Enter recipient's first name:
+Enter recipient's last name:
+Who takes lessons?
+Enter student's first name:
+Enter student's last name:
+Enter lesson details:
+What day does Joy Doe have a lesson?
+(1 = Sunday, 2 = Monday, 3 = Tuesday, 4 = Wednesday, 5 = Thursday, 6 = Friday, 7 = Saturday ):
+You entered: Tuesday
+Enter lesson duration in minutes:
+Enter hourly fee:
+Lessons happen on 2024-10-01 2024-10-08 2024-10-15 2024-10-22 2024-10-29 
+Do you want to add another lesson? (Y/N)
+Enter lesson details:
+What day does Joy Doe have a lesson?
+(1 = Sunday, 2 = Monday, 3 = Tuesday, 4 = Wednesday, 5 = Thursday, 6 = Friday, 7 = Saturday ):
+You entered: Thursday
+Enter lesson duration in minutes:
+Enter hourly fee:
+Lessons happen on 2024-10-03 2024-10-10 2024-10-17 2024-10-24 2024-10-31 
+Do you want to add another lesson? (Y/N)
+
+Do you want to add another student? (Y/N)
+Who takes lessons?
+Enter student's first name:
+Enter student's last name:
+Enter lesson details:
+What day does Tom Doe have a lesson?
+(1 = Sunday, 2 = Monday, 3 = Tuesday, 4 = Wednesday, 5 = Thursday, 6 = Friday, 7 = Saturday ):
+You entered: Sunday
+Enter lesson duration in minutes:
+Enter hourly fee:
+Lessons happen on 2024-10-06 2024-10-13 2024-10-20 2024-10-27 
+Do you want to add another lesson? (Y/N)
+
+Do you want to add another student? (Y/N)
+
+** Invoice for: John Doe **
+2 Students:
+Student 1. Joy Doe
+Lessons:
+1. Tuesday, Duration: 60 minutes, Unit Price: $30.00, Number of Lessons: 5, Lesson dates: 2024-10-01 2024-10-08 2024-10-15 2024-10-22 2024-10-29 *Total Lesson Price: $150.00
+2. Thursday, Duration: 30 minutes, Unit Price: $15.00, Number of Lessons: 5, Lesson dates: 2024-10-03 2024-10-10 2024-10-17 2024-10-24 2024-10-31 *Total Lesson Price: $75.00
+*Subtotal: $225.00
+
+Student 2. Tom Doe
+Lessons:
+1. Sunday, Duration: 60 minutes, Unit Price: $35.00, Number of Lessons: 4, Lesson dates: 2024-10-06 2024-10-13 2024-10-20 2024-10-27 *Total Lesson Price: $140.00
+*Subtotal: $140.00
+
+* * * Invoice total: $365.00

@@ -1,5 +1,8 @@
-// Created by Younghyun Lee on 10/7/24.
-
+/* Program name: person.h
+* Author: Younghyun Lee
+* Date last updated: 10/9/2024
+* Purpose: Create Person class
+*/
 #ifndef PERSON_H
 #define PERSON_H
 
@@ -30,8 +33,8 @@ public:
     virtual void print() const = 0;
 
     // Friend input/output stream operators
-    // friend istream& operator>>(istream& in, Person& person);
-    // friend ostream& operator<<(ostream& out, const Person& person);
+    friend istream& operator>>(istream& in, Person& person);
+    friend ostream& operator<<(ostream& out, const Person& person);
 
 private:
     string firstName;
@@ -64,17 +67,15 @@ class Student : public Person {
 public:
     // Constructors
     Student();
-    Student(string fname, string lname, int age);
+    Student(string fname, string lname);
 
     // Destructor
     ~Student();
 
     // Getters
-    int getAge() const;
     float getStudentTotalTuition() const;
 
     // Setters
-    void setAge(int age);
     void setStudentTotalTuition(float total);
 
     // Others
@@ -84,7 +85,6 @@ public:
     void print() const override;
 
 private:
-    int age;
     float studentTotalTuition;
     vector<Lesson> lessons;
 };
